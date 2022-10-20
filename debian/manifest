@@ -1,0 +1,7 @@
+usr/share/java/xml-apis-ext.jar:
+ Bundle-ManifestVersion: 2
+ Bundle-Name: XML Commons External
+ Bundle-Vendor: Debian.org
+ Bundle-Version: 1.4
+ Bundle-SymbolicName: org.w3c.css.sac
+ Export-Package: org.w3c.css.sac,org.w3c.css.sac.helpers,org.w3c.dom.smil,org.w3c.dom.svg

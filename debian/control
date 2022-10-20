@@ -1,0 +1,25 @@
+Source: xml-commons-external
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Emmanuel Bourg <ebourg@apache.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ default-jdk,
+ javahelper,
+ maven-repo-helper
+Rules-Requires-Root: no
+Standards-Version: 4.5.0
+Vcs-Git: https://salsa.debian.org/java-team/xml-commons-external.git
+Vcs-Browser: https://salsa.debian.org/java-team/xml-commons-external
+Homepage: https://xerces.apache.org/xml-commons/
+
+Package: libxml-commons-external-java
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: XML Commons external code - DOM, SAX, and JAXP, etc
+ xml-commons is focused on common code and guidelines for xml
+ projects.  The first focus will be to organize and have common
+ packaging for the various externally-defined standards code relating
+ to XML - things like the DOM, SAX, and JAXP interfaces.

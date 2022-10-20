@@ -1,0 +1,2 @@
+debian/xml-apis-ext.xml --java-lib --usj-name=xml-apis-ext --artifact=xml-apis-ext.jar
+debian/xml-apis.xml     --java-lib --usj-name=xml-apis     --artifact=xml-apis.jar --no-usj-versionless

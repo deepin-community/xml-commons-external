@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+%:
+	dh $@ --with maven-repo-helper --with javahelper
+
+override_dh_auto_build:
+	# Build all classes
+	mkdir classes
+	javac -source 7 -target 7 -d classes `find org/ javax/ -name '*.java'`
+
+	# Build xml-apis-ext and xml-apis jar
+	(cd classes/; jar -cvfm ../xml-apis-ext.jar ../manifest.commons \
+	  `find -type d -name "sac" -o -name "smil" -o -name "svg"`)
+	(cd classes/; jar -cvfm ../xml-apis.jar ../manifest.commons \
+	  `find -type f ! \( -wholename "*/sac/*" -o -wholename "*/smil/*" -o -wholename "*/svg/*" \)`)
+
+override_dh_link:
+	dh_link
+	dh_link -plibxml-commons-external-java /usr/share/java/xml-apis-ext-${DEB_VERSION_UPSTREAM}.jar /usr/share/java/xml-commons-external-${DEB_VERSION_UPSTREAM}.jar
+	dh_link -plibxml-commons-external-java /usr/share/java/xml-apis-ext-${DEB_VERSION_UPSTREAM}.jar /usr/share/java/xml-commons-external.jar
+	dh_link -plibxml-commons-external-java /usr/share/java/xml-apis-${DEB_VERSION_UPSTREAM}.jar     /usr/share/java/jaxp-1.4.jar

@@ -1,0 +1,124 @@
+xml-commons-external (1.4.01-5) unstable; urgency=medium
+
+  * Team upload.
+  * Generate Java 7 compatible bytecode
+  * Assigned the package back to the Java Team (Closes: #897313)
+  * Removed the -doc package
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 11 May 2020 00:40:50 +0200
+
+xml-commons-external (1.4.01-4) unstable; urgency=low
+
+  * QA Upload.
+
+  [ Niels Thykier ]
+  * Set Rules-Requires-Root to no.
+  * Bump debhelper-compat to 13.
+  * Remove obsolete get-orig-source target (which just called uscan).
+  * Bump Standards-Version to 4.5.0 - no additional changes required.
+  * Bump Homepage field to use https://xerces.apache.org/xml-commons/
+    (which is where the previous homepage redirected to).
+  * Drop old Vcs fields to (now) defunct Alioth.
+  * Make debian/copyright use standard "public-domain" label as
+    "license" for files under public domain to avoid false positive
+    warnings from Lintian.
+
+  [ Helmut Grohne ]
+  * Mark all packages Multi-Arch: foreign. (Closes: #913430)
+
+ -- Niels Thykier <niels@thykier.net>  Fri, 17 Apr 2020 19:00:58 +0000
+
+xml-commons-external (1.4.01-3) unstable; urgency=low
+
+  * Team upload.
+
+  [ Jakub Adam ]
+  * Add OSGi metadata to JAR manifest.
+
+  [ Emmanuel Bourg ]
+  * Changed the source/target level to 1.7 to build with Java 9
+  * No longer generate the javadoc for the javax.xml and org.w3c.dom packages
+    (Closes: #873250)
+  * Removed Damien Raude-Morvan from the uploaders (Closes: #889354)
+  * Build with the DH sequencer instead of CDBS
+  * Moved the package to Git
+  * Standards-Version updated to 4.1.3
+  * Switch to debhelper level 11
+  * Fixed the watch file
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 12 Mar 2018 00:38:47 +0100
+
+xml-commons-external (1.4.01-2) unstable; urgency=low
+
+  * d/control: Add myself as Uploaders.
+  * d/rules: Build xml-apis-ext.jar and xml-apis.jar (JAXP 1.4).
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Sat, 27 Aug 2011 00:04:58 +0200
+
+xml-commons-external (1.4.01-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release.
+  * Standards-Version to 3.9.2: no changes needed.
+  * d/watch: Fix for new upstream location.
+  * d/control: Drop Depends on JRE package as per Debian Java Policy.
+  * d/copyright: Update to latest DEP-5 revision.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Thu, 25 Aug 2011 00:12:54 +0200
+
+xml-commons-external (1.3.05-2) unstable; urgency=low
+
+  * Added Maven support
+  * Standards-Version to 3.8.4
+  * Source format 3.0 (quilt)
+  * debhelper compat to 7
+
+ -- Gabriele Giacone <1o5g4r8o@gmail.com>  Sun, 21 Feb 2010 23:06:43 +0100
+
+xml-commons-external (1.3.05-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control
+    - Add myself to uploaders.
+    - Update standards version.
+    - Build-dep default-jdk-builddep -> default-jdk.
+    - Fix Vcs-* headers.
+    - Change dependencies from -jre to to -jre-headless. (Closes: #551547)
+    - Misc lintian fixes.
+  * debian/rules
+    - Use DEB_UPSTREAM_VERSION instead of hard coded version.
+    - Change JAVA_HOME to correspond to default-jdk.
+    - Add javac argument to compile for target JVM 1.4.
+    - Change folder for api docs.
+    - Add get-orig-source target.
+  * debian/watch
+    - Keep watch on master distribution site.
+
+ -- Onkar Shinde <onkarshinde@ubuntu.com>  Thu, 17 Dec 2009 19:28:17 +0530
+
+xml-commons-external (1.3.04-2) unstable; urgency=low
+
+  * Upload to unstable now that lenny is out.
+  * Build-depends on default-jdk-builddep
+  * Switching to a machine readable debian/copyright file
+  * Fix small spelling mistakes in debian/control, thanks lintian !
+
+ -- Vincent Fourmond <fourmond@debian.org>  Mon, 16 Feb 2009 23:25:21 +0100
+
+xml-commons-external (1.3.04-1) experimental; urgency=low
+
+  * Debian import (closes: #491748)
+  * Setting the maintainer to the Debian Java team + adding myself
+    to Uploaders
+  * Setting Vcs-* fields for the Debian Java team SVN repository
+  * Updating debian/watch
+  * Some tweaks to debian/copyright: adding link to the GPL + replacing
+    the full text of the Apache-2.0 by a link to the appropriate files.
+
+ -- Vincent Fourmond <fourmond@debian.org>  Mon, 21 Jul 2008 22:48:25 +0200
+
+xml-commons-external (1.3.04-0ubuntu1) intrepid; urgency=low
+
+  * Initial release. LP: #177158
+
+ -- Onkar Shinde <onkarshinde@gmail.com>  Tue, 06 May 2008 00:28:35 +0530
